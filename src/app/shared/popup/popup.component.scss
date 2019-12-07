@@ -1,10 +1,11 @@
+@import "src/app/scss/variables";
 .dialog {
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: #000000;
+  background-color: $black;
   opacity: 0.5;
   z-index: 999;
   display: flex;
@@ -16,7 +17,7 @@
 .popup {
   height: 300px;
   width: 400px;
-  background-color: #ffffff;
+  background-color: $white;
   border-radius: 5px;
   opacity: 1;
   display: flex;
@@ -28,7 +29,7 @@
   left: calc((100% - 400px)/2);
   z-index: 9999;
   padding: 10px;
-  @media (max-width: 767px) {
+  @media (max-width: $max-mobile-width) {
     top: 3%;
   }
 
@@ -42,9 +43,9 @@
     display: flex;
 
     button {
-      background-color: lightslategray;
-      color: #ffffff;
-      border: 1px solid #ffffff;
+      background-color: $gray;
+      color: $white;
+      border: 1px solid $white;
       box-shadow: none;
       border-radius: 6px;
       padding: 7px 14px;
@@ -52,7 +53,7 @@
       font-size: 14px;
 
       &.close {
-        background-color: darkred;
+        background-color: $red;
       }
     }
   }

@@ -1,8 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@import "src/app/scss/variables";
 body {
   margin: 0;
   font-family: "Andale Mono";
-  @media (max-width: 767px) {
+  @media (max-width: $max-mobile-width) {
     position: absolute;
     top: 0;
     left: 0;

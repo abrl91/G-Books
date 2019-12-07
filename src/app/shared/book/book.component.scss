@@ -1,3 +1,5 @@
+@import "src/app/scss/variables";
+
 .book-card {
   height: 350px;
   width: 250px;
@@ -8,7 +10,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 15px 10px;
-  box-shadow: 0 0 2rem 0.15rem rgba(0,0,255,.1);
+  box-shadow: $card-box-shadow;
 
   &:hover {
     -webkit-transform: scale(1.1);
@@ -22,7 +24,7 @@
   }
 
   .book-img {
-    box-shadow: 0 0 1rem 0.1rem rgba(10, 10, 200, 0.3);
+    box-shadow: $book-box-shadow;
   }
 
   button {
@@ -30,15 +32,15 @@
     padding: 7px 14px;
     cursor: pointer;
     font-size: 14px;
-    border: 1px solid #000000;
-    background-color: #ffffff;
-    color: lightslategray;
-    box-shadow: 0 0 1rem 0.1rem rgba(0, 0, 0, 0.15);
+    border: 1px solid $black;
+    background-color: $white;
+    color: $gray;
+    box-shadow: $button-box-shadow;
 
     &:hover {
       background-color: lightslategray;
-      color: #ffffff;
-      border: 1px solid #ffffff;
+      color: $white;
+      border: 1px solid $white;
       box-shadow: none;
     }
   }

@@ -1,10 +1,11 @@
+@import "src/app/scss/variables";
 .main-wrapper {
   margin: 0 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  @media (max-width: 767px) {
+  @media (max-width: $max-mobile-width) {
     min-width: 320px;
   }
   .search-wrapper {
@@ -20,7 +21,7 @@
       border-radius: 3rem;
       outline: 0;
       border: none;
-      box-shadow: 0 0 2rem 0.15rem rgba(0,0,255,.1);
+      box-shadow: $main-box-shadow;
       color: #131f69;
       text-align: center;
       font-size: 16px;
@@ -28,7 +29,7 @@
       background-repeat: no-repeat;
       background-position: bottom 5px right 17px;
 
-      @media (max-width: 767px) {
+      @media (max-width: $max-mobile-width) {
         width: 300px;
         background-size: 60px;
       }
@@ -47,12 +48,12 @@
     margin-top: 40px;
     display: flex;
     button {
-      margin: 0 10px;background-color: #000000;
-      color: #ffffff;
+      margin: 0 10px;background-color: $black;
+      color: $white;
       border-radius: 5px;
       padding: 4px 8px;
       font-size: 13px;
-      @media (max-width: 767px) {
+      @media (max-width: $max-mobile-width) {
         font-size: 15px;
       }
     }

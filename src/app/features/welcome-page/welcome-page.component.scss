@@ -1,3 +1,4 @@
+@import "src/app/scss/variables";
 .main-wrapper {
   background-image: url("../../../assets/images/books-bg.jpeg");
   background-repeat: no-repeat;
@@ -9,13 +10,13 @@
   align-items: center;
   flex-direction: column;
 
-  @media (max-width: 767px) {
+  @media (max-width: $max-mobile-width) {
     height: calc(var(--vh, 1vh) * 100);
   }
 
 
   h1 {
-    background-color: #ffffff;
+    background-color: $white;
     opacity: 0.8;
     padding: 5px 10px;
     margin-top: calc(100vh / 5);
@@ -27,7 +28,7 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background: #ffffff;
+    background: $white;
     opacity: 0.3;
     display: flex;
     justify-content: center;
@@ -39,9 +40,9 @@
   .dialog-box {
     width: 500px;
     height: 200px;
-    border: 2px solid black;
+    border: 2px solid $black;
     border-radius: 25px;
-    background-color: lightgray;
+    background-color: $gray;
     opacity: 0.9;
     display: flex;
     flex-direction: column;
@@ -50,14 +51,14 @@
     position: relative;
 
     label {
-      color: #000000;
+      color: $black;
       font-size: 20px;
     }
     input {
       width: 45%;
       height: 25px;
       border-radius: 10px;
-      border: 1px solid black;
+      border: 1px solid $black;
       margin: 10px 0;
       padding: 5px 10px;
       font-size: 16px;
@@ -66,15 +67,15 @@
     button {
       padding: 5px 10px;
       border-radius: 5px;
-      background-color: #000000;
-      color: #ffffff;
+      background-color: $black;
+      color: $white;
       opacity: 0.7;
       font-size: 14px;
       cursor: pointer;
     }
 
     span {
-      color: darkred;
+      color: $red;
       font-size: 14px;
       position: absolute;
       top: 170px;
