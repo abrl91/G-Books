@@ -1,3 +1,6 @@
+
 <div class="books-wrapper">
+  <p *ngIf="!wishList.length">You Don't Have Wished Books Yet.</p>
+
   <app-book *ngFor="let book of wishList" [book]="book"></app-book>
 </div>
