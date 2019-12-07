@@ -6,8 +6,8 @@
   <div class="loader" *ngIf="loading">Loading...</div>
   <div class="loader" *ngIf="!loading && !searchBox.value">Start Typing To Search For a Book</div>
   <div class="actions-btns-wrapper" *ngIf="searchBox.value">
-    <button type="button">< Prev</button>
-    <button type="button">Next ></button>
+    <button type="button" (click)="prev()">< Prev</button>
+    <button type="button" (click)="next()">Next ></button>
   </div>
   <div class="books-wrapper">
     <app-book *ngFor="let book of gBooks$ | async" [book]="book">

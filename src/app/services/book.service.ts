@@ -15,7 +15,7 @@ export class BookService {
   constructor(private http: HttpClient) { }
 
 
-  getBooksFromApi(q: string, maxResults?: string): Observable<any> {
+  getBooksFromApi(q: string, maxResults?: string, startIndex?: string): Observable<any> {
     if (!q.trim()) {
       return of([]);
     }
@@ -23,7 +23,7 @@ export class BookService {
         {
           q,
           maxResults,
-          startIndex: '0',
+          startIndex,
           apiKey: environment.API_KEY
         }
     })

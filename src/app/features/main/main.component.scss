@@ -27,11 +27,12 @@
       font-size: 16px;
       background-image: url("/assets/images/icon-search.svg");
       background-repeat: no-repeat;
-      background-position: bottom 5px right 17px;
+      background-size: 50px;
+      background-position: bottom 11px right 17px;
 
       @media (max-width: $max-mobile-width) {
         width: 300px;
-        background-size: 60px;
+        background-size: 48px;
       }
     }
 

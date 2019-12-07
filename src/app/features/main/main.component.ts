@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {BookService} from '../../services/book.service';
 import {Book} from '../../models/book';
 import {Observable, Subject} from 'rxjs';
@@ -18,6 +18,9 @@ export class MainComponent implements OnInit {
   gBooks$: Observable<Book[]>;
   public loading = false;
   private searchTerm = new Subject<string>();
+  private searchTermValue: string;
+  private startIndex = '0';
+  private maxResult = '20';
 
   constructor(private BooksService: BookService) { }
 
@@ -27,6 +30,7 @@ export class MainComponent implements OnInit {
 
   search(term: string) {
     this.searchTerm.next(term);
+    this.searchTermValue = term;
   }
 
   getBooks() {
@@ -34,9 +38,24 @@ export class MainComponent implements OnInit {
       tap(_ => this.loading = true),
       debounceTime(300),
       distinctUntilChanged(),
-      switchMap((term: string) => this.BooksService.getBooksFromApi(term, '20')),
+      switchMap((term: string) => this.BooksService.getBooksFromApi(term, `${this.maxResult}`, `${this.startIndex}`)),
       tap(_ => this.loading = false)
     );
+  }
+
+
+  prev() {
+    if (parseInt(this.startIndex, 10) >= 0) {
+      const prevPage = parseInt(this.startIndex, 10) - parseInt(this.maxResult, 10);
+      this.startIndex = prevPage.toString();
+      this.gBooks$ = this.BooksService.getBooksFromApi(this.searchTermValue, '20', `${this.startIndex}`);
+    }
+  }
+
+  next() {
+    const nextPage = parseInt(this.startIndex, 10) + 20;
+    this.startIndex = nextPage.toString();
+    this.gBooks$ = this.BooksService.getBooksFromApi(this.searchTermValue, '20', `${this.startIndex}`);
   }
 
 }
