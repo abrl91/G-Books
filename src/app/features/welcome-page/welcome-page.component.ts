@@ -15,6 +15,10 @@ export class WelcomePageComponent implements OnInit {
 
   ngOnInit() {
     this.userName = new FormControl('', [Validators.required]);
+
+    // for mobile height
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
   }
 
   goToBooks() {

@@ -20,7 +20,7 @@
   </div>
   <div class="loader" *ngIf="loading">Loading...</div>
   <div class="loader" *ngIf="!loading && !searchBox.value">Start Typing To Search a Book</div>
-  <div class="actions-btns-wrapper">
+  <div class="actions-btns-wrapper" *ngIf="searchBox.value">
     <button type="button">< Prev</button>
     <button type="button">Next ></button>
   </div>

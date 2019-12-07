@@ -1,17 +1,28 @@
 .header-wrapper {
   display: flex;
   height: 90px;
-  background-color: lightslategray;
-  box-shadow: 0 2px 13px 0 rgba(0,0,0,0.11);
+  width: 100%;
+  z-index: 99;
+  box-shadow: 0 0 2rem 0.15rem rgba(0,0,255,.1);
+  background-color: #ffffff;
+  position: sticky;
+  top: 0;
   ul {
     display: flex;
     align-items: center;
     margin: 0;
-    color: white;
+    color: lightslategray;
+    @media (max-width: 767px) {
+      padding: 0 40px;
+    }
     li {
       list-style: none;
       cursor: pointer;
       padding: 0 20px;
+      @media (max-width: 767px) {
+        width: 80px;
+        padding: 0 10px;
+      }
       &.greeting {
         cursor: auto;
       }
@@ -19,18 +30,23 @@
         text-decoration: none;
         font-family: Arial, Helvetica, sans-serif;
         font-weight: bold;
-        color: #ffffff;
+        color: lightslategray;
         font-size: 18px;
 
         &.active {
-          border-bottom: 3px solid white;
+          border-bottom: 3px solid lightslategray;
         }
       }
     }
     div {
       font-size: 24px;
       font-family: Arial, Helvetica, sans-serif;
-      color: #ffffff;
+      color: lightslategray;
+
+      @media (max-width: 767px) {
+        font-size: 18px;
+        display: none;
+      }
     }
   }
 

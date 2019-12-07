@@ -16,8 +16,8 @@
 .popup {
   height: 300px;
   width: 400px;
-  border: 1px solid #000000;
   background-color: #ffffff;
+  border-radius: 5px;
   opacity: 1;
   display: flex;
   flex-direction: column;
@@ -28,6 +28,9 @@
   left: calc((100% - 400px)/2);
   z-index: 9999;
   padding: 10px;
+  @media (max-width: 767px) {
+    top: 3%;
+  }
 
   span {
     font-family: Arial;
