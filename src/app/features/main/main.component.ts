@@ -45,10 +45,12 @@ export class MainComponent implements OnInit {
 
 
   prev() {
-    if (parseInt(this.startIndex, 10) >= 0) {
+    if (parseInt(this.startIndex, 10) > 0) {
       const prevPage = parseInt(this.startIndex, 10) - parseInt(this.maxResult, 10);
       this.startIndex = prevPage.toString();
       this.gBooks$ = this.BooksService.getBooksFromApi(this.searchTermValue, '20', `${this.startIndex}`);
+    } else {
+      return;
     }
   }
 
