@@ -1,1 +1,31 @@
-<p>main works!</p>
+<!--for the pipe approach-->
+<!---------------------------------------------------------------------------------------------------->
+<!--<div class="main-wrapper">-->
+<!--  <div class="search-wrapper">-->
+<!--    <label for="search-book"></label>-->
+<!--    <input id="search-book" type="text" [(ngModel)]="filterValue">-->
+<!--  </div>-->
+
+<!--  <div class="books-wrapper">-->
+<!--    <app-book *ngFor="let book of books | search: filterValue" [book]="book"></app-book>-->
+<!--  </div>-->
+<!--</div>-->
+<!--<app-popup [isDialogOpen]="isDialogOpen"></app-popup>-->
+
+
+<div class="main-wrapper">
+  <div class="search-wrapper">
+    <label for="search-book"></label>
+    <input id="search-book" type="text" #searchBox (input)="search(searchBox.value)">
+  </div>
+  <div class="loader" *ngIf="loading">Loading...</div>
+  <div class="loader" *ngIf="!loading && !searchBox.value">Start Typing To Search a Book</div>
+  <div class="actions-btns-wrapper">
+    <button type="button">< Prev</button>
+    <button type="button">Next ></button>
+  </div>
+  <div class="books-wrapper">
+    <app-book *ngFor="let book of gBooks$ | async" [book]="book">
+    </app-book>
+  </div>
+</div>
