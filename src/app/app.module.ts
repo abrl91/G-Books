@@ -11,6 +11,7 @@ import { BookComponent } from './shared/book/book.component';
 import { PopupComponent } from './shared/popup/popup.component';
 import { PaginatorComponent } from './shared/paginator/paginator.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FooterComponent } from './shared/footer/footer.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

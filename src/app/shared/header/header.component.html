@@ -1,1 +1,27 @@
-<p>header works!</p>
+<nav class="header-wrapper">
+  <ul>
+    <img src="../../../assets/images/icon-books.png">
+    <div>G-Books</div>
+    <li class="greeting">Welcome {{greetingUserName}}</li>
+    <li>
+      <a
+        href="javascript:void(0)" routerLink="main"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact:true}"
+        queryParamsHandling="merge">
+        Search
+      </a>
+    </li>
+    <li>
+      <a
+        href="javascript:void(0)"
+        routerLink="wishList"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact:true}"
+        queryParamsHandling="merge">
+        Wish List
+      </a>
+    </li>
+  </ul>
+
+</nav>

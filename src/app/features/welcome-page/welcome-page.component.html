@@ -1,1 +1,10 @@
-<p>welcome-page works!</p>
+<div class="main-wrapper">
+  <div class="dialog"></div>
+  <h1>WELCOME TO G-BOOKS</h1>
+  <div class="dialog-box">
+    <label for="user-name">User Name</label>
+    <input id="user-name" type="text" [formControl]="userName" autocomplete="off" (keyup.enter)="goToBooks()">
+    <button (click)="goToBooks()">TAKE ME TO BOOKS</button>
+    <span *ngIf="!isEnteredValidUserName">PLEASE ENTER VALID USER NAME !!!</span>
+  </div>
+</div>

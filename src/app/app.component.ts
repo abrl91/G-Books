@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'G-Books';
+  constructor(private activeRoute: ActivatedRoute) { }
+
+
+  get userName() {
+    return this.activeRoute.snapshot.queryParams.userName;
+  }
 }
