@@ -1,10 +1,10 @@
-<div class="main-wrapper">
-  <div class="dialog"></div>
-  <h1>WELCOME TO G-BOOKS</h1>
-  <div class="dialog-box">
-    <label for="user-name">User Name</label>
-    <input id="user-name" type="text" [formControl]="userName" autocomplete="off" (keyup.enter)="goToBooks()">
-    <button (click)="goToBooks()">TAKE ME TO BOOKS</button>
-    <span *ngIf="!isEnteredValidUserName">PLEASE ENTER VALID USER NAME !!!</span>
+<div class="welcome">
+  <div class="welcome__backdrop"></div>
+  <h2 class="welcome__title">welcome to g-books</h2>
+  <div class="welcome__box">
+    <label for="user-name" class="welcome__box-label">user name</label>
+    <input id="user-name" type="text" class="welcome__box-input" [formControl]="userName" autocomplete="off" (keyup.enter)="goToBooks()">
+    <button (click)="goToBooks()" class="btn welcome__box-btn">take me to books</button>
+    <span *ngIf="!isEnteredValidUserName" class="welcome__box-validation">please enter valid username</span>
   </div>
 </div>
