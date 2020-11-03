@@ -39,7 +39,6 @@ export class BookService {
     const findDuplicate = this.wishListBooks.find(b => b.title === book.title);
     if (!findDuplicate) {
       this.wishListBooks = [...this.wishListBooks, book];
-      // localStorage.setItem('wishedBook', JSON.stringify(this.wishListBooks));
       return this.wishListBooks;
     }
   }
