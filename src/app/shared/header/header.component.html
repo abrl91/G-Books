@@ -1,26 +1,35 @@
-<nav class="header-wrapper">
-  <ul>
-    <img src="../../../assets/images/icon-books.png">
-    <div>G-Books</div>
-    <li class="greeting">Welcome {{greetingUserName}}</li>
-    <li>
+<nav class="nav">
+  <ul class="nav__items">
+    <li class="nav__item">
+      <img class="nav__logo" src="../../../assets/images/icon-books.png">
+      <a class="nav__name"
+        href="javascript:void(0)" routerLink="main"
+        queryParamsHandling="merge">
+        g-books
+      </a>
+    </li>
+    <li class="nav__item">
       <a
         href="javascript:void(0)" routerLink="main"
         routerLinkActive="active"
         [routerLinkActiveOptions]="{exact:true}"
         queryParamsHandling="merge">
-        Search
+        search
       </a>
     </li>
-    <li>
+    <li class="nav__item">
       <a
         href="javascript:void(0)"
         routerLink="wishList"
         routerLinkActive="active"
         [routerLinkActiveOptions]="{exact:true}"
         queryParamsHandling="merge">
-        Wish List
+        wish list
       </a>
+    </li>
+    <li class="nav__item">
+      <span class="nav__item-greeting">Welcome</span>
+       {{greetingUserName}}
     </li>
   </ul>
 
