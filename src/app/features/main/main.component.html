@@ -1,19 +1,24 @@
-<div class="main-wrapper">
-  <div class="search-wrapper">
-    <label for="search-book"></label>
-    <input id="search-book" type="text" #searchBox (input)="search(searchBox.value)">
+<main class="main">
+  <div class="search-box">
+    <label for="searchBox" class="search-box__label"></label>
+    <input id="searchBox" type="text" class="search-box__input" #searchBox (input)="search(searchBox.value)">
   </div>
-  <div class="loader" *ngIf="loading">Loading...</div>
-  <div class="loader" *ngIf="!loading && !searchBox.value">Start Typing To Search For a Book</div>
-  <div class="actions-btns-wrapper" *ngIf="searchBox.value">
-    <button type="button" (click)="prev()">< Prev</button>
-    <button type="button" (click)="next()">Next ></button>
+  <div class="main__loader" *ngIf="loading">Loading...</div>
+  <div class="main__loader" *ngIf="!loading && !searchBox.value">Start Typing To Search For a Book</div>
+  <div class="main__action-buttons" *ngIf="searchBox.value">
+    <button type="button" class="btn main__action-buttons--prev" (click)="prev()">< Prev</button>
+    <button type="button" class="btn main__action-buttons--next" (click)="next()">Next ></button>
   </div>
-  <div class="books-wrapper">
+  <section class="books">
     <app-book *ngFor="let book of gBooks$ | async" [book]="book">
     </app-book>
-  </div>
-</div>
+  </section>
+</main>
+
+
+
+
+
 
 <!--for the pipe approach-->
 <!---------------------------------------------------------------------------------------------------->
