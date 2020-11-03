@@ -1,5 +1,6 @@
 @import "src/app/scss/variables";
-.dialog {
+
+.backdrop {
   position: fixed;
   top: 0;
   right: 0;
@@ -26,20 +27,19 @@
   justify-content: space-between;
   position: absolute;
   top: 50%;
-  left: calc((100% - 400px)/2);
+  left: 50%;
+  transform: translate(-50%, -50% );
   z-index: 9999;
   padding: 10px;
-  @media (max-width: $max-mobile-width) {
-    top: 3%;
-  }
+  font-size: 1.6rem;
+
 
   span {
-    font-family: Arial;
     font-weight: bold;
     margin-right: 5px;
   }
 
-  .btns-wrapper {
+  &__buttons {
     display: flex;
 
     button {

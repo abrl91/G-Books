@@ -34,7 +34,6 @@ export class BookComponent implements OnInit {
   onAddBook() {
     this.BooksService.addBookToWishList(this.book);
     this.isDialogOpen = false;
-
   }
 
   get checkIfBookInWishList() {

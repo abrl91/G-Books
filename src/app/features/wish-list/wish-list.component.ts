@@ -14,6 +14,8 @@ export class WishListComponent implements OnInit {
   constructor(private BooksService: BookService) { }
 
   ngOnInit() {
+    // const fetchedBooks = localStorage.getItem('wishedBook');
+    // this.wishList = this.BooksService.wishListBooks.length ? this.BooksService.wishListBooks : JSON.parse(fetchedBooks);
     this.wishList = this.BooksService.wishListBooks;
   }
 

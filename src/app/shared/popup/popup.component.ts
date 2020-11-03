@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Book} from '../../models/book';
 
 @Component({
   selector: 'app-popup',
@@ -8,11 +9,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 export class PopupComponent implements OnInit {
 
   @Input() isDialogOpen = false;
-  @Input() title: string;
-  @Input() categories: [];
-  @Input() publisher: string;
-  @Input() publishedDate: Date;
-  @Input() authors: [] = [];
+  @Input() book: Book;
   @Input() isInWishList: boolean;
   @Output() closeDialog: EventEmitter<boolean> = new EventEmitter();
   @Output() addBook: EventEmitter<any> = new EventEmitter();

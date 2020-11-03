@@ -8,11 +8,7 @@
 
 <app-popup
   *ngIf="isDialogOpen"
-  [title]="book.title"
-  [categories]="book.categories"
-  [authors]="book.authors"
-  [publisher]="book.publisher"
-  [publishedDate]="book.publishedDate"
+  [book]="book"
   [isInWishList]="checkIfBookInWishList"
   (closeDialog)="isDialogOpen = false"
   (addBook)="onAddBook()"
