@@ -1,5 +1,5 @@
 
-<div class="books-wrapper">
+<section class="wish-list">
   <p *ngIf="!wishList.length">You Don't Have Wished Books Yet.</p>
   <app-book *ngFor="let book of wishList" [book]="book"></app-book>
-</div>
+</section>

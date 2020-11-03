@@ -1,7 +1,12 @@
-.books-wrapper {
+.wish-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 40px;
   min-height: 100vh;
+  font-size: 1.8rem;
+
+  @media (max-width: 750px) {
+    font-size: 1.4rem;
+  }
 }

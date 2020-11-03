@@ -84,26 +84,32 @@
 
     &-btn {
       padding: 1rem 1.5rem;
-      border-radius: 5px;
       background-color: $black;
       color: $white;
       opacity: 0.7;
+      text-transform: inherit;
+
+      border: none;
+      border-radius: 3px;
       font-size: 1.4rem;
       cursor: pointer;
-      text-transform: inherit;
-      border: none;
 
-      @media (max-width: $max-mobile-width) {
+
+      @media (max-width: $max-tablet-width) {
         padding: 1.5rem 2rem;
-        font-size: 1.6;
+        font-size: 1.6rem;
       }
     }
 
     &-validation {
       color: $red;
-      font-size: 14px;
+      font-size: 1.4rem;
       position: absolute;
-      top: 170px;
+      top: 17rem;
+
+      @media (max-width: $max-tablet-width) {
+        top: 19rem;
+      }
     }
   }
 }
