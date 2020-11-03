@@ -1,11 +1,11 @@
-<div class="dialog" (click)="clickOutside()"></div>
+<div class="backdrop" (click)="clickOutside()"></div>
 <div class="popup">
-  <div><span>Book Name:</span>{{title}}</div>
-  <div><span>author:</span>{{authors}}</div>
-  <div><span>category:</span>{{categories}}</div>
-  <div><span>publisher:</span>{{publisher}}</div>
-  <div><span>publishedDate:</span>{{publishedDate}}</div>
-  <div class="btns-wrapper">
+  <p><span>Book Name:</span>{{book.title}}</p>
+  <p><span>author:</span>{{book.authors}}</p>
+  <p><span>category:</span>{{book.categories}}</p>
+  <p><span>publisher:</span>{{book.publisher}}</p>
+  <p><span>publishedDate:</span>{{book.publishedDate}}</p>
+  <div class="popup__buttons">
     <button *ngIf="!isInWishList" type="button" (click)="addToWishList()">Add To Wish List</button>
     <button *ngIf="isInWishList" type="button" (click)="removeFromWishList()">Remove From Wish List</button>
     <button type="button" class="close" (click)="clickOutside()">cancel</button>
