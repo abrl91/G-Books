@@ -1,53 +1,92 @@
 @import "src/app/scss/variables";
-.header-wrapper {
+.nav {
   display: flex;
-  height: 90px;
+  height: 9rem;
   width: 100%;
   z-index: 99;
   box-shadow: $main-box-shadow;
   background-color: $white;
   position: sticky;
   top: 0;
-  ul {
+  padding: 0 6rem;
+
+  @media (max-width: $max-tablet-width) {
+    padding: 0 1.5rem;
+  }
+
+  &__items {
     display: flex;
     align-items: center;
     margin: 0;
     color: $gray;
-    @media (max-width: $max-mobile-width) {
-      padding: 0 40px;
-    }
-    li {
-      list-style: none;
-      cursor: pointer;
-      padding: 0 20px;
-      @media (max-width: $max-mobile-width) {
-        width: 80px;
-        padding: 0 10px;
-      }
-      &.greeting {
-        cursor: auto;
-      }
-      a {
-        text-decoration: none;
-        font-family: Arial, Helvetica, sans-serif;
-        font-weight: bold;
-        color: $gray;
-        font-size: 18px;
+    width: 100%;
 
-        &.active {
-          border-bottom: 3px solid $gray;
-        }
-      }
-    }
-    div {
-      font-size: 24px;
+
+    h1 {
+      font-size: 2.4rem;
       font-family: Arial, Helvetica, sans-serif;
       color: $gray;
 
-      @media (max-width: $max-mobile-width) {
-        font-size: 18px;
+      @media (max-width: $max-tablet-width) {
+        font-size: 1.8rem;
         display: none;
       }
+    }
+  }
+
+  &__item {
+    list-style: none;
+    cursor: pointer;
+    font-size: 1.6rem;
+    text-transform: capitalize;
+    padding: 0 2rem;
+
+    @media (max-width: $max-tablet-width) {
+      padding: .5rem;
+    }
+
+    &:first-child {
+      font-size: 2.4rem;
+
+      @media (max-width: $max-tablet-width) {
+        width: 4.8rem;
+        margin-right: 2rem;
+      }
+
+    }
+
+    &:last-child {
+      font-size: 2rem;
+      margin-left: auto;
+      text-transform: uppercase;
+    }
+
+
+    &-greeting {
+      @media (max-width: $max-tablet-width) {
+        display: none;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      color: $gray;
+
+      &.active {
+        border-bottom: 3px solid $gray;
+      }
+    }
+  }
+
+  &__logo {
+    vertical-align: middle;
+  }
+
+  &__name {
+    @media (max-width: $max-tablet-width) {
+      display: none;
     }
   }
 
